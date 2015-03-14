@@ -1,0 +1,6 @@
+on early-init
+     setenforce permissive
+     write /proc/sys/kernel/hung_task_timeout_secs 0
+on boot                                       
+    write /sys/class/android_usb/android0/idVendor 04E8
+    write /sys/class/android_usb/android0/idProduct 6860
