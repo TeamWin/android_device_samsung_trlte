@@ -1,4 +1,5 @@
-## TWRP device tree for Samsung Galaxy Note 4 (trltexx, trltedt)
+## TWRP device tree for Samsung Galaxy Note 4 (Snapdragon)
+## trltexx, trltedt, trltetmo, trltecan, trltespr, trlteusc, trltevzw, trlteatt
 
 Add to `.repo/local_manifests/trlte.xml`:
 

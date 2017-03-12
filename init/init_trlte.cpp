@@ -39,12 +39,6 @@
 
 #define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
-void gsm_properties()
-{
-    property_set("telephony.lteOnGsmDevice", "1");
-    property_set("ro.telephony.default_network", "9");
-}
-
 void init_variant_properties() {
     char platform[PROP_VALUE_MAX];
     char bootloader[PROP_VALUE_MAX];
@@ -58,21 +52,37 @@ void init_variant_properties() {
 
     property_get("ro.bootloader", bootloader, NULL);
 
-    if (strstr(bootloader, "N910G")) {
-        property_set("ro.product.model", "SM-N910G");
-        property_set("ro.product.device", "trltedt");
-        gsm_properties();
-    } else {
+    if (strstr(bootloader, "N910A")) {
+        property_set("ro.product.model", "SM-N910A");
+        property_set("ro.product.device", "trlteatt");
+    } else if (strstr(bootloader, "N910F")) {
         property_set("ro.product.model", "SM-N910F");
         property_set("ro.product.device", "trltexx");
-        gsm_properties();
+    } else if (strstr(bootloader, "N910G")) {
+        property_set("ro.product.model", "SM-N910G");
+        property_set("ro.product.device", "trltedt");
+    } else if (strstr(bootloader, "N910R4")) {
+        property_set("ro.product.model", "SM-N910R4");
+        property_set("ro.product.device", "trlteusc");
+    } else if (strstr(bootloader, "N910P")) {
+        property_set("ro.product.model", "SM-N910P");
+        property_set("ro.product.device", "trltespr");
+    } else if (strstr(bootloader, "N910T")) {
+        property_set("ro.product.model", "SM-N910T");
+        property_set("ro.product.device", "trltetmo");
+    } else if (strstr(bootloader, "N910V")) {
+        property_set("ro.product.model", "SM-N910V");
+        property_set("ro.product.device", "trltevzw");
+    } else if (strstr(bootloader, "N910W8")) {
+        property_set("ro.product.model", "SM-N910W8");
+        property_set("ro.product.device", "trltecan");
+    } else {
+        INFO("%s: unexcepted bootloader id!\n", bootloader, devicename);
     }
 
     property_get("ro.product.device", device, NULL);
     strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
-
 
 void vendor_load_properties() {
     init_variant_properties();
