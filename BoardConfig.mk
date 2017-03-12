@@ -56,12 +56,12 @@ TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
 
 # Encryption support
-TW_INCLUDE_CRYPTO := true
-TARGET_HW_DISK_ENCRYPTION := true
+# TW_INCLUDE_CRYPTO := true
+# TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
-TWRP_INCLUDE_LOGCAT := true
-TARGET_USES_LOGD := true
+# TWRP_INCLUDE_LOGCAT := true
+# TARGET_USES_LOGD := true
 
 # Init properties from bootloader version, ex. model info
 TARGET_UNIFIED_DEVICE := true
