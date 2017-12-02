@@ -52,10 +52,7 @@ void init_variant_properties() {
 
     property_get("ro.bootloader", bootloader, NULL);
 
-    if (strstr(bootloader, "N910A")) {
-        property_set("ro.product.model", "SM-N910A");
-        property_set("ro.product.device", "trlteatt");
-    } else if (strstr(bootloader, "N910F")) {
+    if (strstr(bootloader, "N910F")) {
         property_set("ro.product.model", "SM-N910F");
         property_set("ro.product.device", "trltexx");
     } else if (strstr(bootloader, "N910G")) {
