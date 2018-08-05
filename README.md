@@ -6,7 +6,9 @@ Add to `.repo/local_manifests/trlte.xml`:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-	<project path="device/samsung/trlte" name="TeamWin/android_device_samsung_trlte" remote="github" revision="android-7.1" />
+  <project name="TeamWin/android_device_qcom_common" path="device/qcom/common" remote="github" revision="android-7.1" />
+  <project name="TeamWin/android_device_samsung_trlte" path="device/samsung/trlte" remote="github" revision="android-7.1" />
+  <project name="TeamWin/android_kernel_samsung_apq8084" path="kernel/samsung/apq8084" remote="github" revision="cm-14.1" />
 </manifest>
 ```
 
@@ -17,6 +19,6 @@ To build:
 ```sh
 . build/envsetup.sh
 lunch omni_trlte-eng
-make -j5 recoveryimage
+mka recoveryimage
 ```
 
