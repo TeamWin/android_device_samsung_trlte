@@ -13,3 +13,4 @@
 /efsc           emmc            /dev/block/platform/msm_sdcc.1/by-name/mdm1m9kefsc      flags=backup=1;subpartitionof=/efs
 /external_sd    vfat            /dev/block/mmcblk1p1 /dev/block/mmcblk1                 flags=display="Micro SDcard";storage;wipeingui;removable
 /usbstorage     vfat            /dev/block/sda1 /dev/block/sda                          flags=display="USB Storage";storage;wipeingui;removable
+/persist        ext4            /dev/block/bootdevice/by-name/persist                   flags=display="Persist"
